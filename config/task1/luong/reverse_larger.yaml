@@ -1,0 +1,20 @@
+model: LuongAttentionSeq2seq
+dataset_class: SIGMORPOHTask1Dataset
+embedding_size_src: 30
+embedding_size_tgt: 30
+hidden_size: 256
+num_layers_src: 2
+num_layers_tgt: 2
+dropout: 0.4
+
+use_eos: true
+
+epochs: 200
+batch_size: 128
+
+early_stopping_ratio: 1.5
+
+optimizer: Adam
+
+experiment_dir: exps/task1/reverse_luong
+save_min_epoch: 0
