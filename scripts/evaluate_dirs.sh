@@ -19,7 +19,7 @@ for exp_dir in "$@"; do
     if [ ! -f $exp_dir/train.word_accuracy ] || [ $exp_dir/model -nt $exp_dir/train.word_accuracy ]; then
         echo "EXPERIMENT $exp_dir"
         echo "   Evaluating train file: $train_file"
-        python $INFERENCE_SRC -e $exp_dir -t $train_file > $exp_dir/train.out
+        python $INFERENCE_SRC -e $exp_dir -t $train_file 2>/dev/null > $exp_dir/train.out
         paste $train_file <( cut -f2 $exp_dir/train.out ) | sed 's/ //g' | awk 'BEGIN{FS="\t"}{if($2==$NF)c++;s++}END{print c/s}' > $exp_dir/train.word_accuracy
         cat $exp_dir/train.word_accuracy
     fi
@@ -28,7 +28,7 @@ for exp_dir in "$@"; do
     dev_file=${dev_file#dev_file: }
     if [ ! -f $exp_dir/dev.word_accuracy ] || [ $exp_dir/model -nt $exp_dir/dev.word_accuracy ]; then
         echo "   Evaluating dev file: $dev_file"
-        python $INFERENCE_SRC -e $exp_dir -t $dev_file > $exp_dir/dev.out
+        python $INFERENCE_SRC -e $exp_dir -t $dev_file 2>/dev/null > $exp_dir/dev.out
         paste $dev_file <( cut -f2 $exp_dir/dev.out ) | sed 's/ //g' | awk 'BEGIN{FS="\t"}{if($2==$NF)c++;s++}END{print c/s}' > $exp_dir/dev.word_accuracy
         cat $exp_dir/dev.word_accuracy
     fi
@@ -37,7 +37,7 @@ for exp_dir in "$@"; do
     if [ -f $test ]; then
         if [ ! -f $exp_dir/test.word_accuracy ] || [ $exp_dir/model -nt $exp_dir/test.word_accuracy ]; then
             echo "   Evaluating test file: $test"
-            python $INFERENCE_SRC -e $exp_dir -t $test > $exp_dir/test.out
+            python $INFERENCE_SRC -e $exp_dir -t $test 2>/dev/null > $exp_dir/test.out
             paste $test <( cut -f2 $exp_dir/test.out ) | sed 's/ //g' | awk 'BEGIN{FS="\t"}{if($2==$NF)c++;s++}END{print c/s}' > $exp_dir/test.word_accuracy
             cat $exp_dir/test.word_accuracy
         fi
