@@ -1,13 +1,15 @@
-lemma_embedding_size: [10, 20, 30]
-lemma_hidden_size: [128, 256, 512]
-lemma_num_layers: [1, 2, 3, 4]
+lemma_embedding_size: [20, 30, 50]
+lemma_hidden_size: [128, 256, 512, 1024]
+lemma_num_layers: [1, 2]
 
 tag_embedding_size: [5, 10, 20]
-tag_hidden_size: [64, 128]
-tag_num_layers: [1, 2, 3, 4]
+tag_hidden_size: [128, 256]
+tag_num_layers: [1, 2]
 
-inflected_embedding_size: [10, 20, 30]
-inflected_hidden_size: [128, 256, 512]
+inflected_embedding_size: [20, 30, 50]
+inflected_hidden_size: [128, 256, 512, 1024]
 inflected_num_layers: [1, 2]
 
-dropout: [0.1, 0.3, 0.4]
+dropout: [0.1, 0.3, 0.4, 0.6]
+early_stopping_ratio: [1.7, 1.8, 2.0, 3.0]
+share_vocab: [true, false]
