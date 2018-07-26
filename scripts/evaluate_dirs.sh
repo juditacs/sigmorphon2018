@@ -32,15 +32,5 @@ for exp_dir in "$@"; do
         paste $dev_file <( cut -f2 $exp_dir/dev.out ) | sed 's/ //g' | awk 'BEGIN{FS="\t"}{if($2==$NF)c++;s++}END{print c/s}' > $exp_dir/dev.word_accuracy
         cat $exp_dir/dev.word_accuracy
     fi
-    test=$(dirname $dev_file)
-    test=${test}/../../answers
-    if [ -f $test ]; then
-        if [ ! -f $exp_dir/test.word_accuracy ] || [ $exp_dir/model -nt $exp_dir/test.word_accuracy ]; then
-            echo "   Evaluating test file: $test"
-            python $INFERENCE_SRC -e $exp_dir -t $test 2>/dev/null > $exp_dir/test.out
-            paste $test <( cut -f2 $exp_dir/test.out ) | sed 's/ //g' | awk 'BEGIN{FS="\t"}{if($2==$NF)c++;s++}END{print c/s}' > $exp_dir/test.word_accuracy
-            cat $exp_dir/test.word_accuracy
-        fi
-    fi
 done
 
