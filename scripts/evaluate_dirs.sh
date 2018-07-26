@@ -17,20 +17,21 @@ for exp_dir in "$@"; do
     train_file=$(grep ^train_file $exp_dir/config.yaml)
     train_file=${train_file#train_file: }
     if [ ! -f $exp_dir/train.word_accuracy ] || [ $exp_dir/model -nt $exp_dir/train.word_accuracy ]; then
+        echo "----------------------"
         echo "EXPERIMENT $exp_dir"
-        echo "   Evaluating train file: $train_file"
+        echo "   Evaluating train file: $(basename $train_file)"
         python $INFERENCE_SRC -e $exp_dir -t $train_file 2>/dev/null > $exp_dir/train.out
         paste $train_file <( cut -f2 $exp_dir/train.out ) | sed 's/ //g' | awk 'BEGIN{FS="\t"}{if($2==$NF)c++;s++}END{print c/s}' > $exp_dir/train.word_accuracy
-        cat $exp_dir/train.word_accuracy
+        echo "   " $(cat $exp_dir/train.word_accuracy)
     fi
 
     dev_file=$(grep ^dev_file $exp_dir/config.yaml)
     dev_file=${dev_file#dev_file: }
     if [ ! -f $exp_dir/dev.word_accuracy ] || [ $exp_dir/model -nt $exp_dir/dev.word_accuracy ]; then
-        echo "   Evaluating dev file: $dev_file"
+        echo "   Evaluating dev file: $(basename $dev_file)"
         python $INFERENCE_SRC -e $exp_dir -t $dev_file 2>/dev/null > $exp_dir/dev.out
         paste $dev_file <( cut -f2 $exp_dir/dev.out ) | sed 's/ //g' | awk 'BEGIN{FS="\t"}{if($2==$NF)c++;s++}END{print c/s}' > $exp_dir/dev.word_accuracy
-        cat $exp_dir/dev.word_accuracy
+        echo "   " $(cat $exp_dir/dev.word_accuracy)
     fi
 done
 
