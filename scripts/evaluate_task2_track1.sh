@@ -19,7 +19,7 @@ for exp_dir in "$@"; do
     train_file=${train_file#train_file: }
     dev_file=$(grep ^dev_file $exp_dir/config.yaml)
     dev_file=${dev_file#dev_file: }
-    if [ ! -f $exp_dir/dev.word_accuracy ] || [ $exp_dir/model -nt $exp_dir/dev.word_accuracy ]; then
+    if [ ! -f $exp_dir/dev.word_accuracy ] || [ $exp_dir -nt $exp_dir/dev.word_accuracy ]; then
         echo "Dir: $exp_dir"
         echo "   Train file: $train_file"
         echo "   Evaluating dev file: $dev_file"
