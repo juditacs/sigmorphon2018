@@ -3,27 +3,29 @@ dataset_class: SIGMORPOHTask2Track1Dataset
 
 experiment_dir: exps/task2/track1/default
 epochs: 200
-batch_size: 32
-early_stopping_ratio: 1.5
+batch_size: 16
 save_min_epoch: 0
+early_stopping_strategy: dev_loss_increase
+early_stopping_window: 5
 
 include_same_forms_ratio: 1.0
 
 context_hidden_size: 256 
-context_num_layers: 1
+context_num_layers: 2
 
 char_embedding_size: 40
 tag_embedding_size: 20 
 tag_hidden_size: 128 
-tag_num_layers: 1
+tag_num_layers: 2
 
 word_hidden_size: 256
-word_num_layers: 1
+word_num_layers: 2
 
 lemma_hidden_size: 256
-lemma_num_layers: 1
+lemma_num_layers: 2
 
 decoder_hidden_size: 256
-decoder_num_layers: 1
+decoder_num_layers: 2
 
-dropout: 0.0
+dropout: 0.2
+overwrite_model: false

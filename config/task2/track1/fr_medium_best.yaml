@@ -1,0 +1,26 @@
+batch_size: 32
+char_embedding_size: 30
+context_hidden_size: 256
+context_num_layers: 1
+dataset_class: SIGMORPOHTask2Track1Dataset
+decoder_hidden_size: 64
+decoder_num_layers: 1
+dropout: 0.2
+early_stopping_strategy: dev_loss_increase
+early_stopping_window: 10
+epochs: 200
+lemma_hidden_size: 256
+lemma_num_layers: 1
+min_epochs: 0.0
+model: ContextInflectionSeq2seq
+optimizer: Adam
+share_embedding: False
+share_vocab: False
+tag_embedding_size: 30
+tag_hidden_size: 128
+tag_num_layers: 2
+word_hidden_size: 64
+word_num_layers: 2
+
+experiment_dir: exps/task2/track1/final
+save_min_epoch: 0

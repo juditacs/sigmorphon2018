@@ -1,0 +1,24 @@
+batch_size: 32
+char_embedding_size: 50
+context_hidden_size: 256
+context_num_layers: 2
+dataset_class: SIGMORPHONTask2Track2Dataset
+decoder_num_layers: 2
+dropout: 0.2
+early_stopping_strategy: dev_loss_increase
+early_stopping_window: 5
+epochs: 200
+lemma_hidden_size: 256
+lemma_num_layers: 2
+min_epochs: 0
+model: Task2Track2Model
+optimizer: Adam
+share_embedding: true
+share_context_encoder: false
+
+share_vocab: true
+word_hidden_size: 256
+word_num_layers: 2
+
+experiment_dir: exps/task2/track2/default
+save_min_epoch: 0

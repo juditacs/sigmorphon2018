@@ -1,0 +1,10 @@
+embedding_size_src: [20, 30, 50]
+embedding_size_tgt: [20, 30, 50]
+share_vocab: [true, false]
+
+hidden_size: [64, 128, 256, 512]
+num_layers_src: [1, 2, 3]
+num_layers_tgt: [1]
+
+dropout: [0.1, 0.3, 0.4]
+early_stopping_ratio: [0.8, 1.0, 1.2, 1.5]

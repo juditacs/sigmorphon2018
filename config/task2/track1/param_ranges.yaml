@@ -1,0 +1,16 @@
+batch_size: [8, 16, 32]
+early_stopping_window: [5, 10]
+
+context_hidden_size: [64, 128, 256]
+context_num_layers: [1, 2]
+
+char_embedding_size: [30, 40, 50]
+tag_embedding_size: [10, 20, 30]
+tag_num_layers: [1, 2]
+
+word_hidden_size: [64, 128, 256]
+word_num_layers: [1, 2]
+
+decoder_num_layers: [1]
+
+dropout: [0.0, 0.2]
