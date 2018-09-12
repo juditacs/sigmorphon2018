@@ -1,6 +1,7 @@
 batch_size: 128
 commit_hash: b8047cbe58b4764127c40e16ce599b260c46dd30
 dataset_class: ReinflectionDataset
+dev_file: data/conll2018/task1/all/northern-sami-dev
 dropout: 0.3
 early_stopping_window: 5
 epochs: 200
@@ -13,8 +14,10 @@ lemma_num_layers: 4
 model: ReinflectionSeq2seq
 numpy_random_seed: 1189930436
 optimizer: Adam
+save_min_epoch: 0
 share_vocab: false
 tag_embedding_size: 20
 tag_hidden_size: 128
 tag_num_layers: 4
 torch_random_seed: 1807898248
+train_file: data/conll2018/task1/all/northern-sami-train-high

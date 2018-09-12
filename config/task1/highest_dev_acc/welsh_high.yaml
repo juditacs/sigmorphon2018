@@ -1,6 +1,7 @@
 batch_size: 128
 commit_hash: b8047cbe58b4764127c40e16ce599b260c46dd30
 dataset_class: ReinflectionDataset
+dev_file: data/conll2018/task1/all/welsh-dev
 dropout: 0.4
 early_stopping_window: 5
 epochs: 200
@@ -13,8 +14,10 @@ lemma_num_layers: 4
 model: ReinflectionSeq2seq
 numpy_random_seed: 2129783426
 optimizer: Adam
+save_min_epoch: 0
 share_vocab: false
 tag_embedding_size: 20
 tag_hidden_size: 128
 tag_num_layers: 2
 torch_random_seed: 1530889870
+train_file: data/conll2018/task1/all/welsh-train-high

@@ -1,6 +1,7 @@
 batch_size: 128
 commit_hash: 818c7f814ba005b6165d3cca297ee3e4f58bc354
 dataset_class: ReinflectionDataset
+dev_file: data/conll2018/task1/all/swedish-dev
 dropout: 0.4
 early_stopping_window: 5
 epochs: 200
@@ -13,8 +14,10 @@ lemma_num_layers: 2
 model: ReinflectionSeq2seq
 numpy_random_seed: 1360122982
 optimizer: Adam
+save_min_epoch: 0
 share_vocab: true
 tag_embedding_size: 10
 tag_hidden_size: 128
 tag_num_layers: 1
 torch_random_seed: 1410881616
+train_file: data/conll2018/task1/all/swedish-train-low

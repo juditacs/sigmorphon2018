@@ -1,6 +1,7 @@
 batch_size: 128
 commit_hash: 88a0cd8b5bd391b6cfaf16a9d7c6583efcf9795f
 dataset_class: ReinflectionDataset
+dev_file: data/conll2018/task1/all/arabic-dev
 dropout: 0.4
 early_stopping_window: 5
 epochs: 200
@@ -13,8 +14,10 @@ lemma_num_layers: 4
 model: ReinflectionSeq2seq
 numpy_random_seed: 113831679
 optimizer: Adam
+save_min_epoch: 0
 share_vocab: false
 tag_embedding_size: 10
 tag_hidden_size: 128
 tag_num_layers: 2
 torch_random_seed: 193264254
+train_file: data/conll2018/task1/all/arabic-train-high
