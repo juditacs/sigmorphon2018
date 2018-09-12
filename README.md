@@ -36,7 +36,8 @@ The framework deep-morphology needs to be installed as a Python package.
 Each experiment is configured by a single YAML configuration file and optional
 command line arguments that may override the configuration file. In practice,
 we usually only specify the train and the dev file as command line arguments
-and load every other option from the config file.
+and load every other option from the config file. If you just want to replicate
+our results, you do not need to specify the training and dev files (see below).
 
 # Task1
 
