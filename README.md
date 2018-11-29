@@ -98,8 +98,19 @@ I made a few figures after publishing the paper, here they are.
 
 ## The effect of random initialization
 
-Three languages were used for random parameter search. Here we trained the best
-configuration for each language 20 times with different random seeds which
-seems to affect the dev and test accuracy quite heavily.
+Three languages were used for random parameter search for Task 1. Here we
+trained the best configuration for each language 20 times with different random
+seeds which seems to affect the dev and test accuracy quite heavily.
 
 ![Seed](fig/task1_seed.png)
+
+## Task1 results on a bar chart
+
+The results of high and medium tracks of the 7 highest performing teams (on
+the high setting).
+
+![Task1 results](fig/task1.png)
+
+## Our Task2 results
+
+![Task2 results](fig/task2.png)
