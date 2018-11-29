@@ -91,3 +91,15 @@ Please note that the results of experiments slightly vary accross machines and
 GPUs as well as versions of PyTorch and deep-morphology, thus replicating the
 exact results is very difficult. However the differences are almost negligible
 and you should see similar numbers to the ones reported in the paper.
+
+# Misc
+
+I made a few figures after publishing the paper, here they are.
+
+## The effect of random initialization
+
+Three languages were used for random parameter search. Here we trained the best
+configuration for each language 20 times with different random seeds which
+seems to affect the dev and test accuracy quite heavily.
+
+![Seed](fig/task1_seed.png)
