@@ -41,7 +41,7 @@ our results, you do not need to specify the training and dev files (see below).
 
 # Task1
 
-As explained in the paper (TODO link), we trained a large number of random
+As explained in the [paper](https://aclanthology.org/K18-3016/), we trained a large number of random
 experiments on three languages, chose the 5 best configuration by language,
 then we ran the 15 configs on every language and every data size. These
 configurations are available in the
@@ -59,7 +59,7 @@ by:
 
     cd <path to this repo>
     mkdir -p data
-    cd data
+    cd datahttps://aclanthology.org/K18-3016/
     git clone https://github.com/sigmorphon/conll2018
 
 # Task2
